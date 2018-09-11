@@ -1,4 +1,4 @@
-//
+////
 //  ViewController.swift
 //  iRoom-Register
 //
@@ -18,15 +18,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var textFieldConfirmPwd: UITextField!
     @IBOutlet weak var labelConfirmPwd: UILabel!
     @IBOutlet var titleCollection: [UIButton]!
-    
+    @IBOutlet weak var titleVal1: UILabel!
     @IBOutlet weak var textFieldFName: UITextField!
     @IBOutlet weak var textFieldLName: UITextField!
-    @IBOutlet weak var textFieldDOBPicker: UIDatePicker!
     @IBOutlet weak var labelMsg: UILabel!
+    @IBOutlet weak var textDobPicker: UITextField!
+    private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(ViewController.dateChanged(datePicker:)), for: .valueChanged)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.viewTapped(gestureRecogniser:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        textDobPicker.inputView = datePicker
+        // self.dobPicker.date = NSDate.init(timeIntervalSinceNow: 0) as Date
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +73,6 @@ class ViewController: UIViewController {
                 button.isHidden = !button.isHidden
                 self.view.layoutIfNeeded()
             })
-         
         }
     }
     
@@ -81,15 +89,38 @@ class ViewController: UIViewController {
         }
         switch city1 {
         case .mr:
-            print("Mr")
+            titleVal1.text = "Selected: Mr"
         case .miss:
-            print("Miss")
+            titleVal1.text = "Selected: Miss"
         case .mrs:
-            print("Mrs")
+            titleVal1.text = "Selected: Mrs"
+        }
+        titleCollection.forEach{(button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = true
+                self.view.layoutIfNeeded()
+            })
         }
     }
     
+    @IBAction func eventDobAtion(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        //let strDate = dateFormatter.string(from: dobPicker.date)
+        //self.labelMsg.text = strDate
+    }
+    
     //MARK: functions
+    @objc func viewTapped(gestureRecogniser: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        textDobPicker.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
     /// Validate email string
     ///
     /// - parameter email: A String that rappresent an email address

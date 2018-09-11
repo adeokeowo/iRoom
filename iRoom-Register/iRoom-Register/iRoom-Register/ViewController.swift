@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     //MARK: constants
-    var titleValues = ["Mr", "Miss", "Mrs"]
-    let cellReuseIdentifier = "cell"
     //MARK: components
     @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var labelUsername: UILabel!
@@ -19,7 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelPwd: UILabel!
     @IBOutlet weak var textFieldConfirmPwd: UITextField!
     @IBOutlet weak var labelConfirmPwd: UILabel!
-    @IBOutlet weak var textFieldTitle: UITextField!
+    @IBOutlet var titleCollection: [UIButton]!
+    
     @IBOutlet weak var textFieldFName: UITextField!
     @IBOutlet weak var textFieldLName: UITextField!
     @IBOutlet weak var textFieldDOBPicker: UIDatePicker!
@@ -59,6 +58,36 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func eventHandleTitleSelection(_ sender: UIButton) {
+        titleCollection.forEach{(button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+         
+        }
+    }
+    
+    enum Titles: String {
+        case mr = "Mr"
+        case miss = "Miss"
+        case mrs = "Mrs"
+        
+    }
+    
+    @IBAction func eventTitleTapped(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let city1 = Titles(rawValue: title) else {
+            return
+        }
+        switch city1 {
+        case .mr:
+            print("Mr")
+        case .miss:
+            print("Miss")
+        case .mrs:
+            print("Mrs")
+        }
+    }
     
     //MARK: functions
     /// Validate email string

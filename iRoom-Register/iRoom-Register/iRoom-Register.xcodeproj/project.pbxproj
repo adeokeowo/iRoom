@@ -12,9 +12,11 @@
 		A441F37C2147359800E5412A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A441F37A2147359800E5412A /* Main.storyboard */; };
 		A441F37E2147359900E5412A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A441F37D2147359900E5412A /* Assets.xcassets */; };
 		A441F3812147359900E5412A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A441F37F2147359900E5412A /* LaunchScreen.storyboard */; };
+		AFE5397730FDF8D108053AE7 /* Pods_iRoom_Register.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4151B6E1A57882715A70B1 /* Pods_iRoom_Register.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40AEC120969EAEBA238C211D /* Pods-iRoom-Register.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRoom-Register.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iRoom-Register/Pods-iRoom-Register.debug.xcconfig"; sourceTree = "<group>"; };
 		A441F3732147359800E5412A /* iRoom-Register.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iRoom-Register.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A441F3762147359800E5412A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A441F3782147359800E5412A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		A441F37D2147359900E5412A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A441F3802147359900E5412A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A441F3822147359900E5412A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB4151B6E1A57882715A70B1 /* Pods_iRoom_Register.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRoom_Register.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0B16F951352AE9E71AA51D /* Pods-iRoom-Register.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRoom-Register.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRoom-Register/Pods-iRoom-Register.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE5397730FDF8D108053AE7 /* Pods_iRoom_Register.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46A47FBCCB823CB2BA96AE98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB4151B6E1A57882715A70B1 /* Pods_iRoom_Register.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A441F36A2147359800E5412A = {
 			isa = PBXGroup;
 			children = (
 				A441F3752147359800E5412A /* iRoom-Register */,
 				A441F3742147359800E5412A /* Products */,
+				D446DA360ED2D454EEE6CA36 /* Pods */,
+				46A47FBCCB823CB2BA96AE98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "iRoom-Register";
 			sourceTree = "<group>";
 		};
+		D446DA360ED2D454EEE6CA36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40AEC120969EAEBA238C211D /* Pods-iRoom-Register.debug.xcconfig */,
+				CE0B16F951352AE9E71AA51D /* Pods-iRoom-Register.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A441F3852147359900E5412A /* Build configuration list for PBXNativeTarget "iRoom-Register" */;
 			buildPhases = (
+				171CDEFB3A27595FCFB3AEE2 /* [CP] Check Pods Manifest.lock */,
 				A441F36F2147359800E5412A /* Sources */,
 				A441F3702147359800E5412A /* Frameworks */,
 				A441F3712147359800E5412A /* Resources */,
+				F501BBFC05D5D36EFC14C5CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		171CDEFB3A27595FCFB3AEE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iRoom-Register-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F501BBFC05D5D36EFC14C5CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iRoom-Register/Pods-iRoom-Register-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iRoom-Register/Pods-iRoom-Register-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A441F36F2147359800E5412A /* Sources */ = {
@@ -278,6 +351,7 @@
 		};
 		A441F3862147359900E5412A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40AEC120969EAEBA238C211D /* Pods-iRoom-Register.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +370,7 @@
 		};
 		A441F3872147359900E5412A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE0B16F951352AE9E71AA51D /* Pods-iRoom-Register.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
